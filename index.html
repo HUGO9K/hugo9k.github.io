@@ -2,179 +2,426 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Chloé Celse</title>
-  <style>
-    * { box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio de CELSE Chloé, technicienne systèmes et réseaux.">
+<title>Cele Chloé | Portfolio IT</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #faf6f2;
-      color: #403b3b;
-      line-height: 1.7;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
-    header {
-      background: #ead7d6;
-      text-align: center;
-      padding: 75px 20px;
-    }
+:root {
+  --cream: #faf7f2;
+  --beige: #f0e7dc;
+  --coffee: #634b3c;
+  --brown: #382c26;
+  --muted: #786d65;
+  --white: #fffdfa;
+}
 
-    h1 { font-size: 42px; margin-bottom: 10px; }
-    h2 { color: #a77482; }
-    header p { font-size: 19px; }
+* { box-sizing: border-box; }
 
-    nav {
-      background: white;
-      padding: 18px;
-      text-align: center;
-    }
+html { scroll-behavior: smooth; }
 
-    nav a {
-      margin: 10px;
-      color: #8e6470;
-      text-decoration: none;
-      font-weight: bold;
-    }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'DM Sans', Arial, sans-serif;
+  line-height: 1.7;
+}
 
-    section {
-      max-width: 950px;
-      margin: 45px auto;
-      padding: 30px;
-    }
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.25;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      margin: 20px 0;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px #0000000d;
-    }
+a { color: inherit; }
 
-    .button {
-      display: inline-block;
-      background: #a77482;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 25px;
-      text-decoration: none;
-    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 8%;
+  background: var(--white);
+}
 
-    footer {
-      text-align: center;
-      background: #ead7d6;
-      padding: 25px;
-    }
-  </style>
+.logo {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--coffee);
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links a:hover { color: #a37c60; }
+
+.hero {
+  padding: 115px 8%;
+  text-align: center;
+  background: linear-gradient(145deg,#f3e8da,#faf7f2);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #92725c;
+}
+
+.hero h1 {
+  font-size: clamp(42px,7vw,78px);
+  margin: 15px 0;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 15px auto 30px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 27px;
+  background: var(--coffee);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  margin: 7px;
+  transition: transform .3s, background .3s;
+}
+
+.btn:hover {
+  background: #8d6a52;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--coffee);
+  border: 1px solid var(--coffee);
+}
+
+.btn-outline:hover { color: white; }
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 85px 25px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  margin: 10px 0 15px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 auto 40px;
+  max-width: 650px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid #eee5da;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px #382c2608;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #382c2615;
+}
+
+.card h3 { font-size: 23px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 22px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--beige);
+  color: var(--coffee);
+  border-radius: 20px;
+  margin: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.alt { background: #f2ebe3; }
+
+.project-number {
+  color: #b4937a;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.project-card p, .card p { color: var(--muted); }
+
+.contact { text-align: center; }
+
+footer {
+  background: var(--brown);
+  color: #f5e9df;
+  text-align: center;
+  padding: 30px;
+  font-size: 13px;
+}
+
+.reveal {
+  animation: fadeUp .8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  nav { flex-direction: column; }
+  .links { justify-content: center; }
+  .hero { padding: 75px 20px; }
+  .grid { grid-template-columns: 1fr; }
+  .container { padding: 60px 20px; }
+  .section-title { font-size: 31px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>Chloé Celse</h1>
-    <p>Technicienne Supérieure Systèmes et Réseaux</p>
-    <p>Passionnée par l'informatique, les réseaux
-       et la cybersécurité.</p>
-    <a class="button" href="#projets">Découvrir mes projets</a>
-  </header>
 
-  <nav>
+<nav>
+  <a class="logo" href="#">Chloé Celse.</a>
+  <div class="links">
     <a href="#apropos">À propos</a>
     <a href="#competences">Compétences</a>
     <a href="#projets">Projets</a>
     <a href="#contact">Contact</a>
-  </nav>
+  </div>
+</nav>
 
-  <section id="apropos">
-    <h2>🌸 À propos de moi</h2>
-    <div class="card">
-      <p>
-        Après plusieurs années dans le management,
-        j'ai choisi de me reconvertir dans un domaine
-        qui me passionne : l'informatique.
-      </p>
-      <p>
-        À travers ma formation TSSR et mes expériences
-        pratiques, j'ai développé des compétences
-        en administration de systèmes, réseaux,
-        virtualisation et cybersécurité.
-      </p>
-      <p>
-        Mon objectif est de poursuivre mon évolution
-        vers l'administration systèmes et réseaux.
-      </p>
+<header class="hero reveal">
+  <div class="eyebrow">Bienvenue dans mon univers IT</div>
+  <h1>Chloé Celse<span style="color:#b4937a">.</span></h1>
+  <h2>Technicienne Supérieure<br>Systèmes & Réseaux</h2>
+  <p>
+    Technicienne Supérieur Systèmes et Réseaux,
+    je suis une avant tout une passionnée d'informatique,
+    toujours animée par l'envie d'apprendre et de monter en compétences.
+    J'aime contribuer aux différents projets d'une entreprise,
+    et je souhaite trouver ma place au sein d'une équipe.
+    Donnez-moi l'opportunité de montrer ma pugnacité,
+    Je saurai vous prouver que vous avez eu raison de me faire confiance.
+  </p>
+  <a class="btn" href="#projets">Découvrir mes projets</a>
+  <a class="btn btn-outline" href="#apropos">Mon parcours</a>
+</header>
+
+<main>
+
+<section id="apropos" class="container">
+  <div class="eyebrow" style="text-align:center">Mon histoire</div>
+  <h2 class="section-title">À propos de moi</h2>
+  <p class="subtitle">
+    Une reconversion professionnelle guidée par
+    la passion et l'envie d'apprendre.
+  </p>
+
+  <div class="card">
+    <h3>Bonjour, moi c'est Chloé ! ☕</h3>
+    <p>
+      Après plusieurs années dans le monde du management et
+      la grande distribution, j'ai décidé de prendre
+      un nouveau chemin professionnel dan le monde de l'informatique.
+    </p>
+    <p>
+      J'ai effectué une formation de Technicienne Supérieure
+      Systèmes et Réseaux et développé des compétences
+      en administration Windows et Linux, réseaux,
+      virtualisation et sécurité informatique.
+    </p>
+    <p>
+      Mon stage au sein de la mairie de La Londe-les-Maures
+      m'a permis de travailler sur des projets concrets au sein même de leurs infrastructure,
+      d'approfondir mes connaissances et d'acquérir de l'expérience.
+    </p>
+    <p>
+      Aujourd'hui, je souhaite poursuivre mon évolution
+      aux sein d'une entreprise qui saura me donner ma chance.
+    </p>
+  </div>
+</section>
+
+<section id="competences" class="alt">
+  <div class="container">
+    <div class="eyebrow" style="text-align:center">Mon savoir-faire</div>
+    <h2 class="section-title">Compétences techniques</h2>
+    <p class="subtitle">
+      Les technologies et outils que j'utilise
+      dans mes projets et environnements de laboratoire.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🖥️ Systèmes</h3>
+        <span class="tag">Windows Server 2022</span>
+        <span class="tag">Windows 10 / 11</span>
+        <span class="tag">Debian</span>
+        <span class="tag">Ubuntu</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">GPO</span>
+      </div>
+
+      <div class="card">
+        <h3>🌐 Réseaux</h3>
+        <span class="tag">TCP/IP</span>
+        <span class="tag">DNS</span>
+        <span class="tag">DHCP</span>
+        <span class="tag">VLAN</span>
+        <span class="tag">Routage</span>
+        <span class="tag">VPN</span>
+      </div>
+
+      <div class="card">
+        <h3>☁️ Virtualisation</h3>
+        <span class="tag">Proxmox VE</span>
+        <span class="tag">VirtualBox</span>
+        <span class="tag">VMware</span>
+        <span class="tag">Hyper-V</span>
+        <span class="tag">Docker</span>
+      </div>
+
+      <div class="card">
+        <h3>🔐 Sécurité & outils</h3>
+        <span class="tag">Stormshield</span>
+        <span class="tag">OPNsense</span>
+        <span class="tag">Vaultwarden</span>
+        <span class="tag">Authelia</span>
+        <span class="tag">LDAP</span>
+        <span class="tag">GLPI</span>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="competences">
-    <h2>💻 Mes compétences</h2>
-    <div class="card">
-      <p>🖥️ Windows Server, Active Directory, DNS, DHCP</p>
-      <p>🐧 Linux Debian et Ubuntu</p>
-      <p>🌐 TCP/IP, VLAN, routage, VPN</p>
-      <p>🔐 Stormshield, OPNsense, GPO</p>
-      <p>☁️ Proxmox, VirtualBox, VMware</p>
-      <p>🐳 Docker, Vaultwarden, Authelia</p>
-      <p>🛠️ GLPI, maintenance et support informatique</p>
-    </div>
-  </section>
+<section id="projets" class="container">
+  <div class="eyebrow" style="text-align:center">Mes réalisations</div>
+  <h2 class="section-title">Projets informatiques</h2>
+  <p class="subtitle">
+    Une sélection de projets réalisés pendant
+    ma formation, mon stage et mes travaux personnels.
+  </p>
 
-  <section id="projets">
-    <h2>📂 Mes projets informatiques</h2>
-
-    <div class="card">
+  <div class="grid">
+    <article class="card project-card">
+      <div class="project-number">PROJET 01</div>
       <h3>Infrastructure Windows Server</h3>
       <p>
-        Installation et configuration d'un serveur
-        Windows avec Active Directory, DNS, DHCP,
-        comptes utilisateurs et partages réseau.
+        Déploiement d'un environnement Active Directory
+        avec DNS, DHCP, unités d'organisation,
+        utilisateurs et partages réseau.
       </p>
-    </div>
+      <span class="tag">Windows Server</span>
+      <span class="tag">AD DS</span>
+      <span class="tag">DNS / DHCP</span>
+    </article>
 
-    <div class="card">
-      <h3>Virtualisation avec Proxmox</h3>
+    <article class="card project-card">
+      <div class="project-number">PROJET 02</div>
+      <h3>Virtualisation Proxmox</h3>
       <p>
-        Installation d'un hyperviseur et création
-        de machines virtuelles Windows et Linux.
+        Installation et configuration d'un hyperviseur Proxmox VE.
+        Création de machines virtuelles Windows et Linux
+        et configuration de leur réseau.
       </p>
-    </div>
+      <span class="tag">Proxmox</span>
+      <span class="tag">Debian</span>
+      <span class="tag">Virtualisation</span>
+    </article>
 
-    <div class="card">
-      <h3>Docker et gestion des identités</h3>
+    <article class="card project-card">
+      <div class="project-number">PROJET 03</div>
+      <h3>Docker & gestion des identités</h3>
       <p>
-        Déploiement de Vaultwarden et Authelia
-        et configuration de services d'authentification.
+        Déploiement de Vaultwarden et Authelia,
+        configuration LDAP et expérimentation
+        de l'authentification centralisée pour la Mairie.
       </p>
-    </div>
+      <span class="tag">Docker</span>
+      <span class="tag">Vaultwarden</span>
+      <span class="tag">Authelia</span>
+    </article>
 
-    <div class="card">
-      <h3>Laboratoire réseau Louvatech</h3>
+    <article class="card project-card">
+      <div class="project-number">PROJET 04</div>
+      <h3>Laboratoire Louvatech</h3>
       <p>
-        Conception d'une infrastructure virtuelle
-        pour expérimenter l'administration
-        des systèmes et réseaux.
+        Conception d'un laboratoire d'entreprise
+        fictive pour pratiquer l'administration
+        des serveurs, des réseaux et des pare-feu.
       </p>
-    </div>
-  </section>
+      <span class="tag">VirtualBox</span>
+      <span class="tag">OPNsense</span>
+      <span class="tag">Windows / Linux</span>
+    </article>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>✉️ Me contacter</h2>
-    <div class="card">
-      <p>
-        Vous souhaitez échanger sur mon parcours
-        ou mes projets informatiques ?
-      </p>
-      <p>Retrouvez mes réalisations sur GitHub.</p>
-      <a class="button"
-         href="https://github.com/celse-chloe">
-         Mon GitHub
-      </a>
-    </div>
-  </section>
+<section id="contact" class="alt">
+  <div class="container contact">
+    <div class="eyebrow">Restons en contact</div>
+    <h2 class="section-title">Échangeons !</h2>
+    <p class="subtitle">
+      Si vous souhaitez me contacter pour échanger,
+      je reste à votre entière disposition
+    </p>
+    <a class="btn"
+       href="https://github.com/celse-chloe"
+       target="_blank"
+       rel="noopener noreferrer">
+      Découvrir mon GitHub
+    </a>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 Chloé Celse | Portfolio TSSR</p>
-  </footer>
+</main>
+
+<footer>
+  © 2026 Chloé Celse — Portfolio Systèmes & Réseaux
+  <br>
+  Conçu avec passion ☕
+</footer>
+
 </body>
 </html>
