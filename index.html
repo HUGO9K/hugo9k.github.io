@@ -410,6 +410,48 @@ footer {
   text-decoration: none;
 }
  
+/* GRANDS LIENS AVEC EMOJIS */
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 45px;
+}
+
+.hero-link {
+  display: inline-block;
+  background: transparent;
+  color: #493126;
+  border: none;
+  box-shadow: none;
+  padding: 12px 5px;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-link:hover {
+  color: #80563D;
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .hero-links {
+    gap: 15px;
+  }
+
+  .hero-link {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
 </style>
 </head>
 
