@@ -1,803 +1,202 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio de Chloé Celse, Technicienne Supérieure Systèmes et Réseaux.">
-<title>Chloé Celse | Portfolio IT</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
-:root {
-  --espresso: #493126;
-  --coffee: #604637;
-  --moka: #88654e;
-  --caramel: #b58d70;
-  --latte: #dcc2a9;
-  --cream: #fff9f1;
-  --text: #382820;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  color: var(--text);
-  font-family: 'DM Sans', Arial, sans-serif;
-  line-height: 1.8;
-
-  background:
-    radial-gradient(
-      ellipse at 15% 10%,
-      #f7eadd 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      ellipse at 85% 45%,
-      #b58d70 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 20% 85%,
-      #d4b49a 0%,
-      transparent 50%
-    ),
-    linear-gradient(
-      145deg,
-      #ead6c3 0%,
-      #c6a58b 50%,
-      #a47e63 100%
-    );
-
-  background-attachment: fixed;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  line-height: 1.3;
-}
-
-a {
-  color: inherit;
-}
-
-/* MENU */
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 8%;
-  background: rgba(255,249,241,0.9);
-  border-bottom: 1px solid rgba(96,70,55,0.12);
-  backdrop-filter: blur(10px);
-}
-
-.logo {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--espresso);
-  text-decoration: none;
-}
-
-.links {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.links a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.links a:hover {
-  color: var(--moka);
-}
-
-/* ACCUEIL */
-
-.hero {
-  text-align: center;
-  padding: 105px 8% 90px;
-  animation: fadeUp 1s ease both;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--coffee);
-}
-
-.hero h1 {
-  font-size: clamp(44px,7vw,78px);
-  margin: 15px 0;
-  color: var(--espresso);
-}
-
-.hero h2 {
-  font-size: clamp(23px,3vw,34px);
-  color: var(--coffee);
-}
-
-.hero p {
-  max-width: 720px;
-  margin: 25px auto 30px;
-  color: #49372d;
-  font-size: 17px;
-}
-
-/* BOUTONS */
-
-.btn {
-  display: inline-block;
-  background: var(--coffee);
-  color: white;
-  border: 1px solid var(--coffee);
-  padding: 13px 28px;
-  margin: 7px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.btn:hover {
-  background: var(--moka);
-  transform: translateY(-4px);
-}
-
-.btn-outline {
-  background: rgba(255,249,241,0.65);
-  color: var(--espresso);
-}
-
-.btn-outline:hover {
-  color: white;
-}
-
-/* SECTIONS */
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 85px 25px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: clamp(30px,4vw,42px);
-  color: var(--text);
-  margin: 12px 0 15px;
-}
-
-.subtitle {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 42px;
-  color: #49372d;
-}
-
-.center {
-  text-align: center;
-}
-
-/* CARTES */
-
-.card {
-  background: rgba(255,249,241,0.88);
-  border: 1px solid rgba(255,255,255,0.55);
-  border-radius: 20px;
-  padding: 32px;
-  color: var(--text);
-  box-shadow: 0 12px 35px rgba(65,39,24,0.12);
-  backdrop-filter: blur(8px);
-  transition: transform 0.35s, box-shadow 0.35s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(65,39,24,0.2);
-}
-
-.card h3 {
-  color: var(--espresso);
-  font-size: 24px;
-  margin-top: 8px;
-}
-
-.card p {
-  color: #604b3d;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 24px;
-}
-
-/* COMPÉTENCES */
-
-
-.tag {
-  display: block;
-  width: fit-content;
-  min-width: 75%;
-  box-sizing: border-box;
-  background: linear-gradient(135deg, #F5E7D8, #E9D2BB);
-  color: var(--espresso);
-  padding: 12px 18px;
-  border-radius: 16px;
-  margin: 10px 0;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.tag:hover {
-  background: #DFC0A2;
-  transform: translateX(5px);
-}
-
-/* PROJETS */
-
-.project-number {
-  color: var(--coffee);
-  font-size: 12px;
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-/* CV */
-
-.cv-box {
-  max-width: 760px;
-  margin: auto;
-  text-align: center;
-  background: rgba(255,249,241,0.9);
-  border: 1px solid rgba(255,255,255,0.6);
-  padding: 45px 30px;
-  border-radius: 25px;
-  box-shadow: 0 12px 35px rgba(65,39,24,0.12);
-}
-
-.cv-box p {
-  color: #604b3d;
-}
-
-/* CONTACT */
-
-.contact {
-  text-align: center;
-}
-
-/* PIED DE PAGE */
-
-footer {
-  background: rgba(48,32,25,0.94);
-  color: #f3e3d4;
-  text-align: center;
-  padding: 35px 20px;
-  font-size: 13px;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 700px) {
-  nav {
-    flex-direction: column;
-  }
-
-  .links {
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .hero {
-    padding: 75px 20px;
-  }
-
-  .container {
-    padding: 65px 20px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 25px;
-  }
-
-  .cv-box {
-    padding: 30px 20px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-  
-/* LIENS ÉPURÉS STYLE CAPPUCCINO */
-
-.hero .btn,
-.hero .btn-outline {
-  background: transparent;
-  color: #604637;
-  border: none;
-  border-radius: 0;
-  padding: 8px 4px;
-  box-shadow: none;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.hero .btn:hover,
-.hero .btn-outline:hover {
-  background: transparent;
-  color: #8B6047;
-  border: none;
-  box-shadow: none;
-  transform: none;
-  text-decoration: none;
-}
- 
-/* RUBRIQUE CV FONDUE DANS LE DÉCOR */
-
-.cv-box {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-radius: 0;
-  padding: 35px 15px;
-}
-
-/* LIEN DE TÉLÉCHARGEMENT DISCRET */
-
-.cv-box .btn {
-  background: transparent;
-  color: #604637;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 10px 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.cv-box .btn:hover {
-  background: transparent;
-  color: #8B6047;
-  border: none;
-  box-shadow: none;
-  transform: none;
-  text-decoration: none;
-}
- 
-/* GRANDS LIENS AVEC EMOJIS */
-
-.hero-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 45px;
-}
-
-.hero-link {
-  display: inline-block;
-  background: transparent;
-  color: #493126;
-  border: none;
-  box-shadow: none;
-  padding: 12px 5px;
-  font-family: Georgia, serif;
-  font-size: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.hero-link:hover {
-  color: #80563D;
-  text-decoration: none;
-  transform: translateY(-3px);
-}
-
-@media (max-width: 600px) {
-  .hero-links {
-    gap: 15px;
-  }
-
-  .hero-link {
-    font-size: 24px;
-    text-align: center;
-  }
-}
-
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autodesk-Revit - Design and Manage Architectural Models Easily | Windows Desktop App</title>
+<meta name="description" content="Autodesk Revit is a professional desktop software utility that meticulously designs and manages complex architectural models with ease. Download for Windows, follow the simple setup guide, and start building 3D models, MEP layouts, and design automations.">
+<meta name="keywords" content="autodesk-3d, autodesk-revit-2023-pro, autodesk-revit-2025, autodesk-revit-mcp, autodesk-revit-pc, autodesk-revit-windows, design-automation-revit, revit, revit-2025, revit-addins, revit-mcp-server, revit-mep, revit-plugin">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Autodesk-Revit">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://github.com/HUGO9K/Autodesk-Revit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Autodesk-Revit - Design and Manage Architectural Models Easily">
+<meta property="og:description" content="A professional desktop software utility that meticulously designs and manages complex architectural models with ease. Download for Windows and get started in minutes.">
+<meta property="og:url" content="https://github.com/HUGO9K/Autodesk-Revit">
+<meta property="og:site_name" content="Autodesk-Revit">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Autodesk-Revit - Design and Manage Architectural Models Easily">
+<meta name="twitter:description" content="Professional desktop software for architectural modeling on Windows. Visit the download page to get the application.">
 </head>
+<body style="margin:0;padding:0;background:#f5f6fa;color:#1f2430;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;">
 
-<body>
+<main style="max-width:900px;margin:0 auto;padding:clamp(20px,5vw,56px) clamp(16px,4vw,32px);">
 
-<!-- MENU -->
-
-<nav>
-  <a class="logo" href="#">Chloé Celse ☕</a>
-
-  <div class="links">
-    <a href="#apropos">À propos</a>
-    <a href="#competences">Compétences</a>
-    <a href="#projets">Projets</a>
-    <a href="#cv">Mon CV</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- ACCUEIL -->
-
-<header class="hero">
-
-  <div class="eyebrow">
-    Bienvenue dans mon univers informatique
-  </div>
-
-  <h1>CELSE Chloé</h1>
-
-  <h2>
-    Technicienne Supérieure<br>
-    Systèmes & Réseaux
-  </h2>
-
-  <p>
-    Technicienne Supérieure Systèmes et Réseaux,
-    je suis avant tout une passionnée d'informatique,
-    toujours animée par l'envie d'apprendre
-    et de monter en compétences.
-    J'aime contribuer aux différents projets
-    d'une entreprise et je souhaite trouver
-    ma place au sein d'une équipe.
-    Donnez-moi l'opportunité de montrer ma pugnacité :
-    je saurai vous prouver que vous avez eu raison
-    de me faire confiance.
-  </p>
-  
-<div class="hero-links">
-  <a class="hero-link" href="#projets">
-    💻 Découvrir mes projets
-  </a>
-
-  <a class="hero-link" href="#cv">
-    📄 Mon CV
-  </a>
-</div>
-
-</header>
-
-<main>
-
-<!-- À PROPOS -->
-
-<section id="apropos">
-  <div class="container">
-
-    <div class="eyebrow center">Mon histoire</div>
-
-    <h2 class="section-title">À propos de moi</h2>
-
-    <p class="subtitle">
-      Une reconversion professionnelle guidée
-      par la passion.
+  <header style="text-align:center;margin-bottom:clamp(28px,5vw,48px);">
+    <h1 style="font-size:clamp(28px,5.5vw,44px);line-height:1.25;margin:0 0 16px;font-weight:800;letter-spacing:-0.5px;color:#141824;">
+      🏗️ Autodesk-Revit - Design and Manage Architectural Models Easily
+    </h1>
+    <p style="font-size:clamp(17px,2.4vw,20px);color:#48516b;margin:0 auto 28px;max-width:720px;">
+      Autodesk Revit is a professional desktop software utility that meticulously designs and manages complex architectural models with ease. Everything you need to plan, build, and review a complete building design lives in one calm, organized workspace.
     </p>
-
-    <div class="card">
-      <h3>Bonjour, je suis Chloé ! ☕</h3>
-
-      <p>
-        Après plusieurs années dans le monde
-        du management et de la grande distribution,
-        j'ai décidé de prendre un nouveau chemin
-        professionnel dans le monde de l'informatique.
-      </p>
-
-      <p>
-        J'ai effectué une formation de Technicienne
-        Supérieure Systèmes et Réseaux et développé
-        des compétences en administration Windows
-        et Linux, réseaux, virtualisation
-        et sécurité informatique.
-      </p>
-
-      <p>
-        Mon stage au sein de la mairie
-        de La Londe-les-Maures m'a permis
-        de travailler sur des projets concrets
-        au sein même de leurs infrastructures,
-        d'approfondir mes connaissances
-        et d'acquérir de l'expérience.
-      </p>
-
-      <p>
-        Aujourd'hui, je souhaite poursuivre
-        mon évolution au sein d'une entreprise
-        qui saura me donner ma chance et m'accueillir au sein de son équipe.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- COMPÉTENCES -->
-
-<section id="competences">
-  <div class="container">
-
-    <div class="eyebrow center">Mon savoir-faire</div>
-
-    <h2 class="section-title">Compétences techniques</h2>
-
-    <p class="subtitle">
-      Ci-dessous les technologies et outils que j'utilise
-      dans mes projets et environnements de laboratoire.
+    <p style="margin:0 0 18px;">
+      <a href="https://github.com/HUGO9K/Autodesk-Revit"
+         style="display:inline-block;padding:18px 42px;background:linear-gradient(135deg,#4f46e5,#0ea5e9);color:#ffffff;font-size:19px;font-weight:700;text-decoration:none;border-radius:14px;box-shadow:0 10px 24px rgba(79,70,229,0.35);">
+        ⬇️ Get Autodesk-Revit
+      </a>
     </p>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>🖥️ Systèmes</h3>
-        <span class="tag">Windows Server 2022 / 2025</span>
-        <span class="tag">Windows 10 / 11</span>
-        <span class="tag">Debian / Ubuntu</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Active Directory</span>
-        <span class="tag">GPO</span>
-      </div>
-
-      <div class="card">
-        <h3>🌐 Réseaux</h3>
-        <span class="tag">TCP/IP</span>
-        <span class="tag">DNS</span>
-        <span class="tag">DHCP</span>
-        <span class="tag">VLAN</span>
-        <span class="tag">Routage</span>
-        <span class="tag">VPN</span>
-      </div>
-
-      <div class="card">
-        <h3>☁️ Virtualisation</h3>
-        <span class="tag">Proxmox VE</span>
-        <span class="tag">VirtualBox</span>
-        <span class="tag">VMware</span>
-        <span class="tag">Hyper-V</span>
-        <span class="tag">Docker</span>
-      </div>
-
-      <div class="card">
-        <h3>🔐 Sécurité & outils</h3>
-        <span class="tag">Stormshield</span>
-        <span class="tag">OPNsense</span>
-        <span class="tag">pfSense</span>
-        <span class="tag">Vaultwarden</span>
-        <span class="tag">Authelia</span>
-        <span class="tag">LDAP</span>
-        <span class="tag">GLPI</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROJETS -->
-
-<section id="projets">
-  <div class="container">
-
-    <div class="eyebrow center">Mes réalisations</div>
-
-    <h2 class="section-title">Projets informatiques</h2>
-
-    <p class="subtitle">
-      Voici des projets réalisés pendant
-      ma formation, mon stage et mes travaux personnels.
+    <p style="font-size:15px;color:#7a8298;margin:0;">
+      Visit this link to download the application.
     </p>
+  </header>
 
-    <div class="grid">
-
-      <article class="card">
-        <div class="project-number">PROJET 01</div>
-
-        <h3>Infrastructure Windows Server</h3>
-
-        <p>
-          Déploiement d'un environnement Active Directory
-          avec DNS, DHCP, unités d'organisation,
-          utilisateurs, partages réseau et GPO.
-        </p>
-
-        <span class="tag">Windows Server</span>
-        <span class="tag">AD DS</span>
-        <span class="tag">DNS / DHCP</span>
-        <span class="tag">GPO</span>
-      </article>
-
-      <article class="card">
-        <div class="project-number">PROJET 02</div>
-
-        <h3>Virtualisation Proxmox</h3>
-
-        <p>
-          Installation et configuration
-          d'un hyperviseur Proxmox VE.
-          Création de machines virtuelles
-          Windows et Linux et configuration
-          de leur réseau.
-        </p>
-
-        <span class="tag">Proxmox</span>
-        <span class="tag">Debian</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Virtualisation</span>
-      </article>
-
-      <article class="card">
-        <div class="project-number">PROJET 03</div>
-
-        <h3>Docker & gestion des identités</h3>
-
-        <p>
-          Déploiement de Vaultwarden et Authelia,
-          configuration LDAP et expérimentation
-          de l'authentification centralisée (SSO)
-          pour la mairie.
-        </p>
-
-        <span class="tag">Docker</span>
-        <span class="tag">Vaultwarden</span>
-        <span class="tag">Authelia</span>
-      </article>
-
-      <article class="card">
-        <div class="project-number">PROJET 04</div>
-
-        <h3>Laboratoire personnel</h3>
-
-        <p>
-          Conception d'un laboratoire d'entreprise
-          fictive pour pratiquer l'administration
-          des serveurs, des réseaux
-          et des pare-feu.
-        </p>
-
-        <span class="tag">VirtualBox</span>
-        <span class="tag">pfSense</span>
-        <span class="tag">Windows Server / Linux</span>
-        <span class="tag">Windows 10 / 11</span>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- MON CV -->
-
-<section id="cv">
-  <div class="container">
-
-    <div class="eyebrow center">
-      Mon parcours professionnel
-    </div>
-
-    <h2 class="section-title">Mon CV</h2>
-
-    <p class="subtitle">
-      Envie d'en savoir plus sur mon parcours,
-      mes expériences et mes compétences ?
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">📥 Download and Setup</h2>
+    <p style="margin:0 0 18px;">
+      Getting Autodesk-Revit onto your Windows computer takes only a few minutes. There is nothing to compile, nothing to configure, and no programming required. The download page holds the current build of the application, so you always receive the newest version available.
     </p>
-
-    <div class="cv-box">
-
-      <h3>📄 Découvrez mon parcours</h3>
-
-      <p>
-        Retrouvez ma formation TSSR,
-        mes expériences professionnelles,
-        mes projets et mes compétences techniques
-        dans mon curriculum vitae.
-      </p>
-
-      <a class="btn"
-   href="CELSE%20CHLOE%20CV.pdf"
-   download="CV-Chloe-Celse.pdf">
-  Télécharger mon CV en PDF juste ici !
-</a>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-  <div class="container contact">
-
-    <div class="eyebrow">
-      Restons en contact
-    </div>
-
-    <h2 class="section-title">
-      Échangeons ! ☕
-    </h2>
-
-    <p class="subtitle">
-      Vous souhaitez échanger sur mon parcours,
-      mes compétences ou une opportunité professionnelle ?
-      Je reste à votre entière disposition.
+    <p style="margin:0 0 18px;padding:18px 20px;background:#eef2ff;border-left:5px solid #4f46e5;border-radius:10px;font-size:17px;color:#28304a;">
+      <strong>Your one step:</strong> Visit this link to download the application.
     </p>
+    <p style="margin:0 0 26px;">
+      <a href="https://github.com/HUGO9K/Autodesk-Revit"
+         style="display:inline-block;padding:16px 38px;background:linear-gradient(135deg,#e11d48,#f59e0b);color:#ffffff;font-size:18px;font-weight:700;text-decoration:none;border-radius:14px;box-shadow:0 10px 22px rgba(225,29,72,0.30);">
+        ⬇️ Download Autodesk-Revit for Windows
+      </a>
+    </p>
+    <h3 style="font-size:19px;margin:0 0 12px;font-weight:700;color:#141824;">What happens next</h3>
+    <ol style="margin:0;padding-left:24px;color:#3c445e;">
+      <li style="margin-bottom:10px;">Open the link above in your usual web browser.</li>
+      <li style="margin-bottom:10px;">On the page that appears, follow the on-screen prompt to download the application to your computer.</li>
+      <li style="margin-bottom:10px;">Your browser will usually place the downloaded item in your <em>Downloads</em> folder. You can open that folder from File Explorer at any time.</li>
+      <li style="margin-bottom:10px;">Run the application on your Windows machine and begin working with your first architectural model.</li>
+    </ol>
+  </section>
 
-    <!-- BOUTON E-MAIL -->
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">🚀 Getting Started</h2>
+    <p style="margin:0 0 16px;">
+      The first time you open Autodesk-Revit, you will see a main working area surrounded by familiar menus and toolbars. Think of it as a digital drafting table: you place walls, floors, doors, and windows, and the software keeps every part of the building connected to every other part. Change a wall height once and the related views, schedules, and drawings follow along automatically.
+    </p>
+    <p style="margin:0 0 16px;">
+      A comfortable way to begin is to create a new project from a blank template. Give the file a name you will recognize, choose the units you normally work in, and save it to a folder you can find again. From there you can sketch a simple floor plan and watch the 3D view build itself beside your drawing. Nothing you do at this stage is permanent, so explore freely.
+    </p>
+    <p style="margin:0;">
+      Once a project feels right, the software helps you organize it into views, sheets, and schedules, which are simply different ways of looking at the same model. A view shows one slice of the building. A sheet is a page ready to share. A schedule is a tidy table that counts elements for you. Together they turn a rough idea into a presentable design package.
+    </p>
+  </section>
 
-    <a class="btn"
-       href="mailto:casachloepro@gmail.com">
-      ✉️ Me contacter par e-mail
-    </a>
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">✨ Key Features</h2>
+    <ul style="margin:0;padding-left:24px;color:#3c445e;">
+      <li style="margin-bottom:12px;"><strong>Intelligent 3D modeling.</strong> Build walls, slabs, roofs, stairs, and openings that stay linked to one another, so your model and your drawings never drift apart.</li>
+      <li style="margin-bottom:12px;"><strong>Architectural design workspace.</strong> Lay out rooms, check dimensions, and review the building from any angle with clear, readable views.</li>
+      <li style="margin-bottom:12px;"><strong>MEP coordination.</strong> Plan mechanical, electrical, and plumbing routes inside the same model, so services and structure are visible together instead of in separate files.</li>
+      <li style="margin-bottom:12px;"><strong>Design automation support.</strong> Repeat common preparation and review tasks with less manual clicking, keeping your attention on the design itself.</li>
+      <li style="margin-bottom:12px;"><strong>Add-ins and plugins.</strong> Extend the application with optional tools, including support for a Revit MCP server for teams that connect external assistants to their projects.</li>
+      <li style="margin-bottom:12px;"><strong>Up-to-date releases.</strong> Builds aligned with the Autodesk Revit 2023 Pro and Autodesk Revit 2025 generations, so the working environment matches the plans you already have.</li>
+      <li style="margin-bottom:0;"><strong>Professional project management.</strong> Keep related drawings, notes, and schedules inside one project file that travels with the model rather than living in scattered folders.</li>
+    </ul>
+  </section>
 
-    <!-- BOUTON LINKEDIN -->
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">🖥️ System Requirements</h2>
+    <p style="margin:0 0 18px;">
+      Autodesk-Revit is a desktop application built for Windows computers. Before you begin, confirm that your machine comfortably meets the following baseline so the software feels responsive rather than sluggish.
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:16px;min-width:420px;">
+        <thead>
+          <tr style="background:#eef2ff;">
+            <th style="text-align:left;padding:12px 14px;border-bottom:2px solid #dbe1f5;font-weight:700;color:#28304a;">Component</th>
+            <th style="text-align:left;padding:12px 14px;border-bottom:2px solid #dbe1f5;font-weight:700;color:#28304a;">Recommended</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Operating system</td>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Windows 10 or Windows 11, 64-bit</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Processor</td>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Modern multi-core processor, 2.5 GHz or faster</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Memory</td>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">16 GB RAM or more for larger projects</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Storage</td>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">SSD with free space for the application and project files</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Graphics</td>
+            <td style="padding:12px 14px;border-bottom:1px solid #eef0f7;color:#3c445e;">Dedicated graphics card with current drivers</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 14px;color:#3c445e;">Display</td>
+            <td style="padding:12px 14px;color:#3c445e;">1920 × 1080 or higher resolution</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <a class="btn btn-outline"
-       href="https://fr.linkedin.com/in/chloe-celse-938389208"
-       target="_blank"
-       rel="noopener noreferrer">
-      💼 Mon profil LinkedIn
-    </a>
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">🧩 A Smooth First Run</h2>
+    <ul style="margin:0;padding-left:24px;color:#3c445e;">
+      <li style="margin-bottom:12px;"><strong>Close other heavy programs.</strong> Modeling software appreciates a computer that is not busy rendering video in the background.</li>
+      <li style="margin-bottom:12px;"><strong>Keep files local at first.</strong> Save your early projects to a folder on your own drive. Moving to a shared location can wait until you are comfortable.</li>
+      <li style="margin-bottom:12px;"><strong>Start small.</strong> One room, four walls, one door. A small complete model teaches more than a large unfinished one.</li>
+      <li style="margin-bottom:12px;"><strong>Save often and save early.</strong> The software will save over time, but pressing save yourself after a satisfying change is a good habit.</li>
+      <li style="margin-bottom:0;"><strong>Keep your graphics drivers current.</strong> Windows Update and your graphics card maker's website are both fine places to check.</li>
+    </ul>
+  </section>
 
-  </div>
-</section>
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">🛠️ Troubleshooting</h2>
+    <p style="margin:0 0 16px;">
+      <strong>The download did not start.</strong> Refresh the page once, then try again. Some browsers pause downloads until you confirm them, so check the top of the browser window for a small permission prompt.
+    </p>
+    <p style="margin:0 0 16px;">
+      <strong>Windows blocked the application.</strong> A security message sometimes appears for newly downloaded software. Open the message, review the file name, and choose the option that allows the application to run on your computer.
+    </p>
+    <p style="margin:0 0 16px;">
+      <strong>The application opens slowly.</strong> Large models take longer to open than small ones. Close unused views and other programs, and make sure your project file is stored on a fast drive rather than an external one.
+    </p>
+    <p style="margin:0;">
+      <strong>Something looks out of date.</strong> Return to the download link and fetch the current build. Replacing an older copy with the newest one is the simplest fix for most odd behavior.
+    </p>
+  </section>
+
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">📚 Plain-Language Glossary</h2>
+    <ul style="margin:0;padding-left:24px;color:#3c445e;">
+      <li style="margin-bottom:10px;"><strong>Model:</strong> the digital version of the building you are designing.</li>
+      <li style="margin-bottom:10px;"><strong>View:</strong> one way of looking at the model, such as a floor plan or a 3D angle.</li>
+      <li style="margin-bottom:10px;"><strong>Sheet:</strong> a page that holds views and text, ready to be shared or printed.</li>
+      <li style="margin-bottom:10px;"><strong>Schedule:</strong> an automatic table that counts and lists parts of the model.</li>
+      <li style="margin-bottom:0;"><strong>Add-in:</strong> an optional extra tool that adds a capability the main application does not include.</li>
+    </ul>
+  </section>
+
+  <section style="background:#ffffff;border-radius:18px;padding:clamp(22px,4vw,36px);margin-bottom:26px;box-shadow:0 4px 18px rgba(20,24,36,0.07);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 16px;font-weight:750;color:#141824;">❓ Frequently Asked Questions</h2>
+    <p style="margin:0 0 14px;"><strong>Do I need to know programming?</strong> No. Everything in this guide is done with ordinary mouse and keyboard actions on a Windows desktop.</p>
+    <p style="margin:0 0 14px;"><strong>Where do I get the software?</strong> Visit this link to download the application: https://github.com/HUGO9K/Autodesk-Revit</p>
+    <p style="margin:0 0 14px;"><strong>Can I install it on more than one computer?</strong> Install it on the Windows machine you actually use for design work so your projects stay in one place.</p>
+    <p style="margin:0 0 14px;"><strong>What if a project becomes very large?</strong> Split work into separate project files by floor or by discipline, and keep the pieces in a shared folder structure you understand.</p>
+    <p style="margin:0;"><strong>Is this suitable for a beginner?</strong> Yes. Start with a single room, use the plain-language glossary above when a term is unfamiliar, and build outward from there.</p>
+  </section>
+
+  <section style="text-align:center;background:linear-gradient(135deg,#141824,#28304a);border-radius:18px;padding:clamp(26px,5vw,44px);box-shadow:0 8px 26px rgba(20,24,36,0.22);">
+    <h2 style="font-size:clamp(22px,3.4vw,28px);margin:0 0 14px;font-weight:750;color:#ffffff;">Ready to Start Designing?</h2>
+    <p style="margin:0 0 24px;color:#c8cfe3;font-size:17px;">
+      Autodesk-Revit brings architectural modeling, coordination, and project management into one professional desktop workspace. Visit this link to download the application.
+    </p>
+    <p style="margin:0;">
+      <a href="https://github.com/HUGO9K/Autodesk-Revit"
+         style="display:inline-block;padding:18px 44px;background:linear-gradient(135deg,#22c55e,#0ea5e9);color:#ffffff;font-size:19px;font-weight:700;text-decoration:none;border-radius:14px;box-shadow:0 10px 26px rgba(34,197,94,0.38);">
+        ⬇️ Visit the Download Page
+      </a>
+    </p>
+  </section>
+
+  <footer style="text-align:center;padding:28px 8px 8px;color:#8a91a6;font-size:14px;">
+    Autodesk-Revit · Professional architectural modeling for Windows · Keywords: autodesk-3d, autodesk-revit-2023-pro, autodesk-revit-2025, autodesk-revit-mcp, autodesk-revit-pc, autodesk-revit-windows, design-automation-revit, revit, revit-2025, revit-addins, revit-mcp-server, revit-mep, revit-plugin
+  </footer>
 
 </main>
-
-<footer>
-  © 2026 Chloé Celse — Portfolio Systèmes & Réseaux
-  <br>
-  Conçu avec passion ☕ 🤎
-</footer>
-
 </body>
 </html>
