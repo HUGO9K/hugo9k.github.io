@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Chloé Celse</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #faf6f2;
+      color: #403b3b;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #ead7d6;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { color: #a77482; }
+    header p { font-size: 19px; }
+
+    nav {
+      background: white;
+      padding: 18px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 10px;
+      color: #8e6470;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 950px;
+      margin: 45px auto;
+      padding: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #0000000d;
+    }
+
+    .button {
+      display: inline-block;
+      background: #a77482;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      background: #ead7d6;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Chloé Celse</h1>
+    <p>Technicienne Supérieure Systèmes et Réseaux</p>
+    <p>Passionnée par l'informatique, les réseaux
+       et la cybersécurité.</p>
+    <a class="button" href="#projets">Découvrir mes projets</a>
+  </header>
+
+  <nav>
+    <a href="#apropos">À propos</a>
+    <a href="#competences">Compétences</a>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="apropos">
+    <h2>🌸 À propos de moi</h2>
+    <div class="card">
+      <p>
+        Après plusieurs années dans le management,
+        j'ai choisi de me reconvertir dans un domaine
+        qui me passionne : l'informatique.
+      </p>
+      <p>
+        À travers ma formation TSSR et mes expériences
+        pratiques, j'ai développé des compétences
+        en administration de systèmes, réseaux,
+        virtualisation et cybersécurité.
+      </p>
+      <p>
+        Mon objectif est de poursuivre mon évolution
+        vers l'administration systèmes et réseaux.
+      </p>
+    </div>
+  </section>
+
+  <section id="competences">
+    <h2>💻 Mes compétences</h2>
+    <div class="card">
+      <p>🖥️ Windows Server, Active Directory, DNS, DHCP</p>
+      <p>🐧 Linux Debian et Ubuntu</p>
+      <p>🌐 TCP/IP, VLAN, routage, VPN</p>
+      <p>🔐 Stormshield, OPNsense, GPO</p>
+      <p>☁️ Proxmox, VirtualBox, VMware</p>
+      <p>🐳 Docker, Vaultwarden, Authelia</p>
+      <p>🛠️ GLPI, maintenance et support informatique</p>
+    </div>
+  </section>
+
+  <section id="projets">
+    <h2>📂 Mes projets informatiques</h2>
+
+    <div class="card">
+      <h3>Infrastructure Windows Server</h3>
+      <p>
+        Installation et configuration d'un serveur
+        Windows avec Active Directory, DNS, DHCP,
+        comptes utilisateurs et partages réseau.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Virtualisation avec Proxmox</h3>
+      <p>
+        Installation d'un hyperviseur et création
+        de machines virtuelles Windows et Linux.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Docker et gestion des identités</h3>
+      <p>
+        Déploiement de Vaultwarden et Authelia
+        et configuration de services d'authentification.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Laboratoire réseau Louvatech</h3>
+      <p>
+        Conception d'une infrastructure virtuelle
+        pour expérimenter l'administration
+        des systèmes et réseaux.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>✉️ Me contacter</h2>
+    <div class="card">
+      <p>
+        Vous souhaitez échanger sur mon parcours
+        ou mes projets informatiques ?
+      </p>
+      <p>Retrouvez mes réalisations sur GitHub.</p>
+      <a class="button"
+         href="https://github.com/celse-chloe">
+         Mon GitHub
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Chloé Celse | Portfolio TSSR</p>
+  </footer>
+</body>
+</html>
